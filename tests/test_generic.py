@@ -11,6 +11,7 @@ from pyowm.webapi25.stationhistory import StationHistory as StationHistoryEntity
 from pyowm.webapi25.uvindex import UVIndex as UVIndexEntity
 from pyowm.webapi25.coindex import COIndex as COIndexEntity
 from pyowm.webapi25.ozone import Ozone as OzoneEntity
+
 from django_pyowm.models import Location, Weather, Observation, Forecast, Station, \
     StationHistory, UVIndex, COIndex, Ozone
 
@@ -119,6 +120,7 @@ class Databox():
     # UV Index
     uvindex_intensity = 6.8
     uvindex_interval = 'day'
+    #FIXME Here not working for pyowm>=2.7
     uvindex = UVIndexEntity(reference_time_unix, location, uvindex_interval,
                             uvindex_intensity, reception_time_unix)
 

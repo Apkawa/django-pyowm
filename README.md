@@ -5,8 +5,8 @@ A Django ORM interface for PyOWM domain entities
 
 ## Requirements
 
-  - Django 1.10+
-  - PyOWM 2.5+
+  - Django 1.8+
+  - PyOWM >=2.5,<2.7
 
 Python 2.7 is supported.
 
