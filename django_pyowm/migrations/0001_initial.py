@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(help_text=b'Name', max_length=255, null=True, verbose_name=b'Toponym of the place', blank=True)),
                 ('lon', models.FloatField(help_text=b'Longitude', verbose_name=b'Longitude of the place')),
                 ('lat', models.FloatField(help_text=b'Latitude', verbose_name=b'Latitude of the place')),
-                ('city_id', models.IntegerField(help_text=b'City ID', null=True, verbose_name=b'City ID related to the place', blank=True)),
+                ('city_id', models.IntegerField(help_text=b'City ID', unique=True, null=True, verbose_name=b'City ID related to the place', blank=True)),
                 ('country', models.CharField(help_text=b'Country', max_length=255, null=True, verbose_name=b'Country of the place', blank=True)),
             ],
         ),
@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(help_text=b'Name', max_length=255, null=True, verbose_name=b'Name of the meteostation', blank=True)),
-                ('station_id', models.IntegerField(help_text=b'Station ID', verbose_name=b'OWM station ID')),
+                ('station_id', models.IntegerField(help_text=b'Station ID', unique=True, verbose_name=b'OWM station ID')),
                 ('station_type', models.IntegerField(help_text=b'Type', null=True, verbose_name=b'Meteostation type', blank=True)),
                 ('station_status', models.IntegerField(help_text=b'Status', null=True, verbose_name=b'Meteostation status', blank=True)),
                 ('lat', models.FloatField(help_text=b'Latitude', verbose_name=b'Latitude of the meteostation')),
